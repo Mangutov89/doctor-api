@@ -1,4 +1,4 @@
-import './sass/styles.scss';
-import $ from 'jquery';
 import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
+import '../node_modules/bootstrap/scss/bootstrap.scss';
+import './sass/styles.scss';

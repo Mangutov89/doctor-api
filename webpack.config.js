@@ -19,16 +19,29 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Triangle Tracker',
       template: './src/index.html',
-      inject: 'body'
-    })
+      inject: 'body',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/example.html',
+      filename: 'example.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    }),
   ],
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: [
           'style-loader',
-          'css-loader'
+          'css-loader',
+          'sass-loader'
         ]
       },
       {
@@ -38,6 +51,25 @@ module.exports = {
                 /spec/
               ],
         loader: "eslint-loader"
+      },
+      {
+        test: /\.(gif|png|jpe?g)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: 'assets/images/'
+              }
+            }
+          ]
+        },
+
+        {
+        test:/\.html$/,
+        use: [
+          'html-loader'
+        ]
       },
     ]
   }
