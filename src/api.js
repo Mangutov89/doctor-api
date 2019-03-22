@@ -2,7 +2,7 @@ export class GetSymptom {
   getSymptom(artist) {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      let url = `http://theaudiodb.com/api/v1/json/${process.env.API_KEY}/search.php?s=${artist}`;
+      let url = `https://api.betterdoctor.com/2016-03-01/conditions?user_key=${process.env.exports.apiKey}`;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
