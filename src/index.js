@@ -12,7 +12,7 @@ $(document).ready(function() {
   $("#symptom").val("");
 
     let newSymptom = new GetSymptom();
-    let promise = newSymptom.getSymptom(symptomInput);
+    let promise = newSymptom.getDoctors(symptomInput);
 
     promise.then(function(response) {
        let body =JSON.parse(response);
