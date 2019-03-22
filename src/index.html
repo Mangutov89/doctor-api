@@ -5,9 +5,13 @@
     <title>Doctor API</title>
   </head>
   <body>
-    <div class="jumbotron">
-    <h1>Hello World
-    </div>
-    <h2><a href="example.html">Example</a></h2>
+    <form id="medical-form">
+      <label for="symptom">Enter a symptom you have: </label>
+      <input type="text" id="symptom">
+      <label for="doctor">Enter a doctor's name: </label>
+      <input type="text" id="doctor">
+      <button type="submit" name="button">submit</button>
+    </form>
+    <div id="results"></div>
   </body>
 </html>
