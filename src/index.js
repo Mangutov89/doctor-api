@@ -18,7 +18,6 @@ $(document).ready(function() {
 
     promise.then(function(response) {
        let body =JSON.parse(response);
-       console.log(body.data);
        if (body.data.length === 0) {
          $('#results').text("We could no find a doctor in your area to match those symptoms");
        } else {
