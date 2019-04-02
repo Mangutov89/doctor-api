@@ -17,6 +17,7 @@ $(document).ready(function() {
     let promise = newSymptom.getSymptom(doctorLast, symptomInput);
 
     promise.then(function(response) {
+       $("#results").text("");
        let body =JSON.parse(response);
        if (body.data.length === 0) {
          $('#results').text("We could no find a doctor in your area to match those symptoms");
